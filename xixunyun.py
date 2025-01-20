@@ -3,19 +3,7 @@ import json  # 导入json库，用于处理JSON数据
 import time   # 导入time库，用于时间控制
 import smtplib  # 导入smtplib库，用于发送邮件
 from em import sent_email  
-
-#习讯云签到脚本
-import datetime
-
-# 获取当前日期
-today = datetime.date.today()
-
-# 获取今天是星期几（0表示星期一，6表示星期天）
-weekday = today.weekday()
-
-# 创建一个简单的数组来表示星期几
-weekdays = ['星期一', '星期二', '星期三', '星期四', '星期五', '星期六', '星期天']
-   
+  
 data={'account':'220723233',#账号
       'app_id':'cn.vanber.xixunyun.saas',
       'app_version':'5.1.5',
@@ -56,13 +44,10 @@ sign_data={'address':'浙江省嘉兴市桐乡市乌镇镇直通乌镇产业园'
            'longitude':longitude,
            'remark':'0',
     }
-if weekdays[weekday] == '星期日':
-    print('今天无需签到')
-else:
-      sign_request=requests.post(url=sign_url,data=sign_data,headers=login_header)
-      sign=json.loads(sign_request.text)
-      print(sign)
-      sent_email()
+sign_request=requests.post(url=sign_url,data=sign_data,headers=login_header)
+sign=json.loads(sign_request.text)
+print(sign)
+sent_email()
 
 
 
