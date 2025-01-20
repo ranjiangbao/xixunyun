@@ -21,5 +21,4 @@ jobs:
       # npm install
       - name: 签到日志
         run: |
-          npm install
-          node signing.py
+          python example.py
