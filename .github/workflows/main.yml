@@ -1,24 +1,16 @@
 name: 习讯云自动签到
 
 on:
-  push:
-    branches:
-      - main
   schedule:
-    - cron: 0 0 * * *
+    - cron: 0 0 9 * * 0-6
 
 jobs:
   sign:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v2
+      - name:  'Checkout codes'
+        uses: actions/checkout@v1
       # 使用 node:10
-      - name: use Node.js 10.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: 10.x
-      # npm install
-      - name: 签到日志
-        run: |
-          python example.py
+      - name: 'Get Weather'
+        run: python xixunyun.py
+      
