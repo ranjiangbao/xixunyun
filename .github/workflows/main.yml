@@ -2,8 +2,7 @@ name: 习讯云自动签到
 
 on:
   schedule:
-    - cron: 34 20 * * 1-6
-
+    - cron: 42 20 * * 1-6
 jobs:
   sign:
     runs-on: ubuntu-latest
@@ -13,4 +12,3 @@ jobs:
       # 使用 node:10
       - name: 'Get Weather'
         run: python ../xixunyun.py
-      
