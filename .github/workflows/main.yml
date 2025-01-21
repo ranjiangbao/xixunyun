@@ -1,13 +1,32 @@
 name: 习讯云自动签到
 on:
+# 定义触发工作流的事件，例如push到main分支
+  push:
+    branches:
+      - main
   schedule:
     - cron: 0 9 * * 1-6
 jobs:
-  sign:
+ run-script:
     runs-on: ubuntu-latest
+
     steps:
-      - name:  'Checkout codes'
-        uses: actions/checkout@v1
-      # 使用 node:10
-      - name: 'Get Weather'
-        run: python ../../xixunyun.py
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'  # 根据需要选择Python版本
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install smtplib
+        # 如果你的脚本有依赖项，可以在这里安装它们，例如：
+        # pip install requests
+
+    - name: Run xixunyun.py
+      run: |
+        # 或者如果你的脚本不需要命令行参数，可以直接运行：
+        python ../../xixunyun.py
