@@ -17,6 +17,9 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: '3.8'  # 根据需要选择Python版本
+    - name: Install dependencies
+      run: |
+        pip install requests
     - name: Run xixunyun.py
       run: |
         # 或者如果你的脚本不需要命令行参数，可以直接运行：
