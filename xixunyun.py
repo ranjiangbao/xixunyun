@@ -46,7 +46,6 @@ sign_data={'address':'浙江省嘉兴市桐乡市乌镇镇直通乌镇产业园'
     }
 sign_request=requests.post(url=sign_url,data=sign_data,headers=login_header)
 sign=json.loads(sign_request.text)
-print(sign)
 sent_email()
 
 
