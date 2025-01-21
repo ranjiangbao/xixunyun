@@ -20,4 +20,4 @@ jobs:
     - name: Run xixunyun.py
       run: |
         # 或者如果你的脚本不需要命令行参数，可以直接运行：
-        python ../../xixunyun.py
+        python xixunyun.py
