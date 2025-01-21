@@ -21,11 +21,9 @@ def sent_email():
         with smtplib.SMTP_SSL(smtp_server, smtp_port) as server:
             server.login('1691733533@qq.com', 'fsflozzupmlbfdaj')
             server.sendmail('1691733533@qq.com', ['1691733533@qq.com'], msg.as_string())
-        print("邮件发送成功")
     except smtplib.SMTPResponseException as e:
-        print(f"邮件发送失败，错误代码：{e.smtp_code}, 错误信息：{e.smtp_error.decode()}")
+        pass
     except Exception as ex:
-        print(f"邮件发送失败，错误信息：{str(ex)}")
-
+        pass
 # 调用函数发送邮件
 sent_email()
