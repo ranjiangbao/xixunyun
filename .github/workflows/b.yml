@@ -1,13 +1,1 @@
-name: 习讯云自动签到
-on:
-  schedule
-    # - cron: 0 9 * * 1-6
-jobs:
-  sign:
-    runs-on: ubuntu-latest
-    steps:
-      - name:  'Checkout codes'
-        uses: actions/checkout@v1
-      # 使用 node:10
-      - name: 'Get Weather'
-        run: python ../../xixunyun.py
+
