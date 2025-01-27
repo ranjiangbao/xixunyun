@@ -1,8 +1,8 @@
 name: 习讯云自动签到
 on:
   workflow_dispatch:
-  schedule:
-    - cron: 0 1 * * 1-6
+  # schedule:
+  #   - cron: 0 1 * * 1-6
 
 permissions:
   contents: read
