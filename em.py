@@ -25,5 +25,3 @@ def sent_email():
         pass
     except Exception as ex:
         pass
-# 调用函数发送邮件
-sent_email()
